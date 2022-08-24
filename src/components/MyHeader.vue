@@ -73,6 +73,34 @@ export default {
     }
 </script>
 
-<style>
+<style lang="scss">
+    @import '../styles/vars.scss';
 
+    header {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top:10px;
+
+        ul {
+            list-style: none;
+            margin: 30px;
+
+            li {
+                display:inline-block;
+                margin: 0px 5px;
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                    padding:10px;
+
+                    &.active, &:hover {
+                        background-color: $brand_color;
+                    }
+                }
+            }
+        }
+    }
 </style>
