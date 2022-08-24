@@ -81,7 +81,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin-top:10px;
+        margin:10px 0px;
 
         ul {
             list-style: none;
