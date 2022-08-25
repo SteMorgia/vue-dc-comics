@@ -1,116 +1,25 @@
 <template>
     <footer>
         <section class="upper-footer">
-            <div class="footer-links">
-                <h4>DC COMICS</h4>
-                <ul>
-                    <li>
-                        <a href="#">Characters</a>
-                    </li>
-                    <li>
-                        <a href="#">Comics</a>
-                    </li>
-                    <li>
-                        <a href="#">Movies</a>
-                    </li>
-                    <li>
-                        <a href="#">TV</a>
-                    </li>
-                    <li>
-                        <a href="#">Games</a>
-                    </li>
-                    <li>
-                        <a href="#">Videos</a>
-                    </li>
-                    <li>
-                        <a href="#">News</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <div class="container-left">
+                    <div v-for="(link, index) in links" :key="index" class="footer-links">
+                        <h4>{{link.title}}</h4>
+                        <ul>
+                            <li>
+                                <a v-for="(innerLink,innerIndex) in link.links" :key="innerIndex" href="#">{{innerLink}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="container-right">
+                    <div class="footer-logo">
+                        <img src="../assets/img/dc-logo-bg.png" alt="footer-logo">
+                    </div>
+                </div>
             </div>
             
-            <div class="footer-links">
-                <h4>DC</h4>
-                <ul>
-                    <li>
-                        <a href="#">Characters</a>
-                    </li>
-                    <li>
-                        <a href="#">Comics</a>
-                    </li>
-                    <li>
-                        <a href="#">Movies</a>
-                    </li>
-                    <li>
-                        <a href="#">TV</a>
-                    </li>
-                    <li>
-                        <a href="#">Games</a>
-                    </li>
-                    <li>
-                        <a href="#">Videos</a>
-                    </li>
-                    <li>
-                        <a href="#">News</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h4>SITES</h4>
-                <ul>
-                    <li>
-                        <a href="#">Characters</a>
-                    </li>
-                    <li>
-                        <a href="#">Comics</a>
-                    </li>
-                    <li>
-                        <a href="#">Movies</a>
-                    </li>
-                    <li>
-                        <a href="#">TV</a>
-                    </li>
-                    <li>
-                        <a href="#">Games</a>
-                    </li>
-                    <li>
-                        <a href="#">Videos</a>
-                    </li>
-                    <li>
-                        <a href="#">News</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h4>SHOP</h4>
-                <ul>
-                    <li>
-                        <a href="#">Characters</a>
-                    </li>
-                    <li>
-                        <a href="#">Comics</a>
-                    </li>
-                    <li>
-                        <a href="#">Movies</a>
-                    </li>
-                    <li>
-                        <a href="#">TV</a>
-                    </li>
-                    <li>
-                        <a href="#">Games</a>
-                    </li>
-                    <li>
-                        <a href="#">Videos</a>
-                    </li>
-                    <li>
-                        <a href="#">News</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-logo">
-                <img src="../assets/img/dc-logo-bg.png" alt="footer-logo">
-            </div>
         </section>
         <section class="lower-footer">
             <div>
@@ -125,16 +34,72 @@
 
 <script>
 export default {
-    name: 'MyFooter'
+    name: 'MyFooter',
+    data() {
+        return {
+            links: [
+                {
+                    title: 'DC COMICS',
+                    links: [
+                        'Characters',
+                        'Comics',
+                        'Movies',
+                        'TV',
+                        'Games',
+                        'Videos',
+                        'News'
+                    ]
+                },
+                {
+                    title: 'DC',
+                    links: [
+                        'Tern Of Use',
+                        'Privacy Policy(New)',
+                        'Ad Choices',
+                        'Advertising',
+                        'Jobs',
+                        'Subscriptions',
+                        'Talent Workshops',
+                        'CPSC Certificates',
+                        'Ratings',
+                        'Shop Help'
+                    ] 
+                },
+                {
+                    title: 'SITES',
+                    links: [
+                        'DC',
+                        'MAD Magazine',
+                        'DC Kids',
+                        'DC Universe',
+                        'DC Power Visa'
+                    ] 
+                },
+                {
+                    title: 'SHOP',
+                    links: [
+                        'Shop DC',
+                        'Shop DC Collectibles'
+                    ] 
+                }
+            ]
+        }
+    }
 }
 </script>
 
 <style scoped lang="scss">
 @import '../styles/vars.scss';
     .upper-footer {
-        display: flex;
+        
         background-image: url(../assets/img/footer-bg.jpg);
-        padding:30px;
+        
+        .container {
+            display:flex;
+            justify-content: space-around;
+            width:100%;
+            
+        }
         .footer-links {
             margin:10px 20px;
             ul {
