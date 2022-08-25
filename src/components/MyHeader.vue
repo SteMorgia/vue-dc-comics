@@ -83,6 +83,9 @@ export default {
         justify-content: space-around;
         margin:10px 0px;
 
+        img {
+            width:5rem;
+        }
         ul {
             list-style: none;
             margin: 30px;
@@ -90,14 +93,14 @@ export default {
             li {
                 display:inline-block;
                 margin: 0px 5px;
+                height:100%;
 
                 a {
                     color: black;
                     text-decoration: none;
-                    padding:10px;
-
+                    font-size:small;
                     &.active, &:hover {
-                        background-color: $brand_color;
+                        border-bottom: 3px solid $brand_color;
                     }
                 }
             }
