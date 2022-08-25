@@ -6,8 +6,8 @@
                     <div v-for="(link, index) in links" :key="index" class="footer-links">
                         <h4>{{link.title}}</h4>
                         <ul>
-                            <li>
-                                <a v-for="(innerLink,innerIndex) in link.links" :key="innerIndex" href="#">{{innerLink}}</a>
+                            <li v-for="(innerLink,innerIndex) in link.links" :key="innerIndex">
+                                <a href="#">{{innerLink}}</a>
                             </li>
                         </ul>
                     </div>
@@ -98,6 +98,11 @@ export default {
             display:flex;
             justify-content: space-around;
             width:100%;
+
+            .container-left {
+                display:flex;
+                margin-top:15px;
+            }
             
         }
         .footer-links {

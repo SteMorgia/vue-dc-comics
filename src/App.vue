@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <MyHeader/>
+    <MyJumbo/>
     <MyBody/>
     <MyInfo/>
     <MyFooter/>
@@ -11,7 +12,9 @@
 import MyHeader from './components/MyHeader';
 import MyBody from './components/MyBody';
 import MyFooter from './components/MyFooter';
-import MyInfo from './components/MyInfo'
+import MyInfo from './components/MyInfo';
+import MyJumbo from './components/MyJumbo'
+
 
 
 export default {
@@ -20,7 +23,9 @@ export default {
     MyHeader,
     MyBody,
     MyFooter,
-    MyInfo
+    MyInfo,
+    MyJumbo,
+    
 }
 }
 </script>
